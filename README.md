@@ -28,11 +28,16 @@ cd ai-code-reviewer
 ```bash
 cd Backend
 npm install
+npm install express
+npm install axios
+npm install cors
 ```
 #### Frontend:
 ```bash
 cd frontend
-npm install
+npm create vite@latest
+npm install prismjs
+npm install rehype-highlight
 ```
 
 ### 3. Set up environment variables
