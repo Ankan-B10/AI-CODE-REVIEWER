@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ea54e5, #333);
+  color: #fff;
+  border-bottom: 2px solid #444;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  height: calc(100vh - 4rem);
+}
+
+main .left {
+  background-color: #0c0c0c;
+  position: relative;
+  flex: 1;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.left .code {
+  flex: 1;
+  border-radius: 0.7rem;
+  background-color: #121212;
+  padding: 1rem;
+  font-family: "Fira Code", monospace;
+  color: #ffffff;
+}
+
+main .left .review {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: #e3dd34;
+  color: #000000;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+main .left .review:hover {
+  background-color: #f4e950;
+  transform: scale(1.05);
+}
+
+main .left .review:active {
+  transform: scale(0.95);
+}
+
+main .right {
+  background-color: #2a2a2a;
+  padding: 1.5rem 2rem;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  max-height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #222;
+}
+
+main .right::-webkit-scrollbar {
+  width: 8px;
+}
+
+main .right::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+main .right::-webkit-scrollbar-track {
+  background-color: #222;
+}
+
+/*----------RESPONSIVE DESIGN--------------*/
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    height: calc(100vh - 3.5rem);
+  }
+
+  main .left {
+    flex: 1.5;
+    min-height: 50vh;
+  }
+
+  main .right {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1rem;
+    overflow-y: auto;
+  }
+
+  main .left .review {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0.8rem;
+  }
+
+  main .left {
+    min-height: 55vh;
+  }
+
+  main .right {
+    font-size: 0.9rem;
+  }
+
+  main .left .review {
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
