@@ -72,8 +72,6 @@ npm run dev
 ## 🔥 Contributing
 Contributions are welcome! Feel free to fork this repo and submit a pull request.
 
-## 📜 License
-This project is licensed under the MIT License.
 
 ## ⭐ Acknowledgments
 - **Google Gemini API** for AI-powered code review
